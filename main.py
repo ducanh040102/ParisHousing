@@ -64,6 +64,6 @@ for j in range(1, 8):
 
 print("Max:", max, "d=", num_pca)
 #
-# print("Thực tế \t\t Dự đoán" )
-# for i in range (0, 10):
-#     print( Y_valid[i],"\t\t",  y_pred[i])
+print("Thực tế \t\t Dự đoán" )
+for i in range (0, 8):
+    print( Y_valid[i],"\t\t",  y_pred[i])
