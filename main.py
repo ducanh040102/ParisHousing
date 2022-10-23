@@ -8,8 +8,8 @@ df = np.array(pd.read_csv("./ParisHousing.csv", header=0).values)
 X = df[:, :16]
 Y = df[:, 16]
 
-# print(X)
-# print(Y)
+#print(X)
+#print(Y)
 min = 0.0000000000000001
 max = 0
 
@@ -62,7 +62,7 @@ for j in range(1, 8):
         max = rate
         BestLinear = modelLinear
 
-# print("Max:", max, "d=", num_pca)
+print("Max:", max, "d=", num_pca)
 #
 # print("Thực tế \t\t Dự đoán" )
 # for i in range (0, 10):
