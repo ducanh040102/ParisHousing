@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 import main
+import tkinter as tk
 
 sqrtM = 0
 numOfRoom = 0
@@ -38,14 +39,14 @@ def helloCallBack():
     hasStoRoom = varSR.get()
     hasGuestRoom = en16.get()
 
-    messagebox.showinfo("Prediction",main.predict(sqrtM, numOfRoom, yard, pool, floors, cityCode, cityPartRange, previousOwners, made, isNewBuilt, isStormProtector, basement, attic, garage, hasStoRoom, hasGuestRoom))
+    messagebox.showinfo("Prediction","Price: " + main.predict(sqrtM, numOfRoom, yard, pool, floors, cityCode, cityPartRange, previousOwners, made, isNewBuilt, isStormProtector, basement, attic, garage, hasStoRoom, hasGuestRoom))
 
 base = Tk()
-base.geometry("500x860")
+base.geometry("700x540")
 base.title("Paris Housing")
 
-lb0 = Label(base, text="House Price Prediction", width=20, font=("arial", 24))
-lb0.place(x=80, y=40)
+lb0 = Label(base, text="Paris House Price Prediction", width=25, font=("arial", 24))
+lb0.place(x=120, y=40)
 
 lb1 = Label(base, text="Square Meters", width=20, font=("arial", 12))
 lb1.place(x=20, y=120)
@@ -91,48 +92,48 @@ en8 = Entry(base)
 en8.place(x=200, y=400)
 
 lb9 = Label(base, text="Made", width=20, font=("arial", 12))
-lb9.place(x=19, y=460)
+lb9.place(x=340, y=120)
 en9 = Entry(base)
-en9.place(x=200, y=460)
+en9.place(x=520, y=120)
 
 lb10 = Label(base, text="Is New Built", width=20, font=("arial", 12))
-lb10.place(x=5, y=500)
+lb10.place(x=340, y=160)
 varB = IntVar()
-Radiobutton(base, text="Yes", padx=5, variable=varB, value=1).place(x=180, y=500)
-Radiobutton(base, text="No", padx=10, variable=varB, value=0).place(x=240, y=500)
+Radiobutton(base, text="Yes", padx=5, variable=varB, value=1).place(x=520, y=160)
+Radiobutton(base, text="No", padx=10, variable=varB, value=0).place(x=580, y=160)
 
 lb11 = Label(base, text="Has Storm Protector", width=20, font=("arial", 12))
-lb11.place(x=5, y=540)
+lb11.place(x=340, y=200)
 varS = IntVar()
-Radiobutton(base, text="Yes", padx=5, variable=varS, value=1).place(x=180, y=540)
-Radiobutton(base, text="No", padx=10, variable=varS, value=0).place(x=240, y=540)
+Radiobutton(base, text="Yes", padx=5, variable=varS, value=1).place(x=520, y=200)
+Radiobutton(base, text="No", padx=10, variable=varS, value=0).place(x=580, y=200)
 
 lb12 = Label(base, text="Basement", width=20, font=("arial", 12))
-lb12.place(x=19, y=580)
+lb12.place(x=340, y=240)
 en12 = Entry(base)
-en12.place(x=200, y=580)
+en12.place(x=520, y=240)
 
 lb13 = Label(base, text="Attic", width=20, font=("arial", 12))
-lb13.place(x=19, y=620)
+lb13.place(x=340, y=280)
 en13 = Entry(base)
-en13.place(x=200, y=620)
+en13.place(x=520, y=280)
 
 lb14 = Label(base, text="Garage", width=20, font=("arial", 12))
-lb14.place(x=19, y=660)
+lb14.place(x=340, y=320)
 en14 = Entry(base)
-en14.place(x=200, y=660)
+en14.place(x=520, y=320)
 
 lb15 = Label(base, text="Has Storage Room", width=20, font=("arial", 12))
-lb15.place(x=5, y=700)
+lb15.place(x=340, y=360)
 varSR = IntVar()
-Radiobutton(base, text="Yes", padx=5, variable=varSR, value=1).place(x=180, y=700)
-Radiobutton(base, text="No", padx=10, variable=varSR, value=0).place(x=240, y=700)
+Radiobutton(base, text="Yes", padx=5, variable=varSR, value=1).place(x=520, y=360)
+Radiobutton(base, text="No", padx=10, variable=varSR, value=0).place(x=580, y=360)
 
 lb16 = Label(base, text="Number of Guest \n Room", width=20, font=("arial", 12))
-lb16.place(x=19, y=740)
+lb16.place(x=340, y=400)
 en16 = Entry(base)
-en16.place(x=200, y=740)
+en16.place(x=520, y=400)
 
-ttk.Button(base, text="Predict",command=helloCallBack, width=10).place(x=200, y=780)
+ttk.Button(base, text="Predict",command=helloCallBack, width=10).place(x=300, y=480)
 
 base.mainloop()

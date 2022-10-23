@@ -31,9 +31,7 @@ for j in range(1, 8):
     modelPCA = PCA(n_components=j).fit(X)
     print(modelPCA)
 
-    X_new = modelPCA.transform(X)  # Dùng để giảm size cho X
-    # giảm size cho X
-
+    X_new = modelPCA.transform(X)  #giảm size cho X
 
     X_train, X_valid, Y_train, Y_valid = train_test_split(X_new, Y, test_size=0.3, random_state=0)
 
@@ -46,16 +44,19 @@ for j in range(1, 8):
     for i in range(len(y_pred)):
         sum += (abs(y_pred[i] - Y_valid[i]))
 
+    # trung bình sai số giữa giá trị đự đoán và giá trị thực
     mean = sum / len(y_pred)
 
     for i in range(len(y_pred)):
         if (abs(y_pred[i] - Y_valid[i]) < mean) :
             d += 1
 
+    #tỉ lệ đữ liệu có sai số nhỏ hơn sai số trung bình
     rate = d / len(y_pred)
 
-    print("Classification Accuracy:", rate, "\n")
+    print("Accuracy:", rate, "\n")
 
+    #chọn mô hình có tỉ lệ cao nhất để lấy làm mô hình sử dụng
     if (rate > max):
         num_pca = j
         BestPCA = modelPCA
